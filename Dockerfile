@@ -60,6 +60,8 @@ COPY hack/git-verify-wrapper.sh /usr/local/bin/git-verify-wrapper.sh
 COPY --from=builder /usr/local/bin/helm /usr/local/bin/helm
 COPY --from=builder /usr/local/bin/kustomize /usr/local/bin/kustomize
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY git-lfs /usr/bin/git-lfs
+COPY helm /usr/local/bin/helm
 # keep uid_entrypoint.sh for backward compatibility
 RUN ln -s /usr/local/bin/entrypoint.sh /usr/local/bin/uid_entrypoint.sh
 
